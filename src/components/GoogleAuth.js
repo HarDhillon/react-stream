@@ -21,9 +21,10 @@ class GoogleAuth extends React.Component {
   }
 
   // update state if isSignedIn changes and send action
+  // above, our .listen also passes in a boolean of true or false for signed in
   onAuthChange = (isSignedIn) => {
     if (isSignedIn) {
-      this.props.signIn();
+      this.props.signIn(this.auth.currentUser.get().getId());
     } else {
       this.props.signOut()
     }
