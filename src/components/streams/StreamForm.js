@@ -1,10 +1,8 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-import { connect } from 'react-redux';
-import { createStream } from '../../actions';
 
 // this class has a TON of props which are being passed in by reduxForm
-class StreamCreate extends React.Component {
+class StreamForm extends React.Component {
 
   renderError(meta) {
     if (meta.touched && meta.error) {
@@ -28,9 +26,8 @@ class StreamCreate extends React.Component {
      )
   }
 
-  // on submit gets called with
   onSubmit = (formValues) => {
-    this.props.createStream(formValues)
+    this.props.onSubmit(formValues)
   }
 
   render() { 
@@ -62,10 +59,7 @@ const validate = (formValues) => {
 };
 
 // reduxForm works similarly to Connect, it only receives one object
-const formWrapped = reduxForm({
-  form: 'streamCreate',
+export default reduxForm({
+  form: 'streamForm',
   validate: validate
-})(StreamCreate);
-
-// this is how use both connect and reduxForm
-export default connect(null, { createStream: createStream })(formWrapped)
+})(StreamForm);
