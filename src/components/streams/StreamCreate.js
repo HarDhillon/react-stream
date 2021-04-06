@@ -16,6 +16,7 @@ class StreamCreate extends React.Component {
     }
   }
 
+  // formProps comes from redux form, passes it a bunch of props inclduing meta
   renderInput= (formProps) => {
     const className = `field ${formProps.meta.error && formProps.meta.touched? 'error' : ''}`
     return (
