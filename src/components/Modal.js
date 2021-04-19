@@ -9,23 +9,15 @@ const Modal = props => {
       <div onClick={(e) => e.stopPropagation} className="ui standard modal visible active">
 
         <div className="header">
-          Delete Stream
+         { props.title }
         </div>
 
         <div className="content">
-          Are you sure you want to delete this stream?
+          {props.content}
         </div>
 
         <div className="actions">
-
-          <button className="ui button">
-            Cancel
-          </button>
-
-          <button className="ui red button">
-            Delete
-          </button>
-
+          {props.actions}
         </div>
       </div>
     </div>,
