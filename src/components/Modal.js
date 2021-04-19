@@ -1,10 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import history from '../history';
 
 const Modal = props => {
   return ReactDOM.createPortal(
-    <div className="ui dimmer modals visible active">
-      <div className="ui standard modal visible active">
+    <div onClick={ () => history.push('/') } className="ui dimmer modals visible active">
+      {/* we stop propogation so that if you click on modal it doesnt also history push */}
+      <div onClick={(e) => e.stopPropagation} className="ui standard modal visible active">
 
         <div className="header">
           Delete Stream
