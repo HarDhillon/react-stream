@@ -5,7 +5,7 @@ const StreamDelete = () => {
 
   // actions to pass our modal
   const actions = (
-    <div>
+    <React.Fragment>
       <button className="ui button negative">
         Delete
       </button>
@@ -13,7 +13,7 @@ const StreamDelete = () => {
       <button className="ui button">
         Cancel
       </button>
-    </div>
+    </React.Fragment>
   )
 
   return (
