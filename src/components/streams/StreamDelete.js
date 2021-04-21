@@ -10,7 +10,7 @@ class StreamDelete extends React.Component {
   }
 
   renderActions(){
-    // actions to pass our modal
+    // actions to pass our modal (redux actions)
     return (
       <React.Fragment>
         <button className="ui button negative">
