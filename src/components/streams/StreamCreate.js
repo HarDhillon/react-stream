@@ -29,7 +29,7 @@ class StreamCreate extends React.Component {
      )
   }
 
-  // on submit gets called with
+  // on submit gets called with values that come from handleSubmit
   onSubmit = (formValues) => {
     this.props.createStream(formValues)
   }
